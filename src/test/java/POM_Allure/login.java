@@ -1,7 +1,7 @@
 package POM_Allure;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import io.qameta.allure.*;
+//import io.qameta.allure.*;
 import org.openqa.selenium.By;
 //import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,13 +11,14 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.Assert;
 import javax.naming.Name;
+import java.util.concurrent.TimeUnit;
 
 //import static jdk.internal.org.jline.utils.InfoCmp.Capability.user1;
 //import static net.sourceforge.htmlunit.corejs.javascript.Context.enter;
 
 
 public class login extends BaseTest {
-//    private static WebElement FirstName;
+    //    private static WebElement FirstName;
     //    private Object User;
 //
 //    public login(Object user) {
@@ -40,6 +41,8 @@ public class login extends BaseTest {
         WebElement Form = (WebElement) By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[2]");
         Form.click();
 
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         WebElement PracticeForm = driver.findElement(By.xpath("//*[@id=\"item-0\"]"));
         PracticeForm.click();
 
@@ -49,7 +52,7 @@ public class login extends BaseTest {
 
     @Test(dataProvider = "users")
     public void fillingform(String a, String b, String g, String n) {
-            
+
             FirstName.sendKeys(a);
             Surname.sendKeys(b);
             Gender.sendKeys(g);

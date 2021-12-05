@@ -5,6 +5,8 @@ import org.jsoup.Connection;
 import javax.lang.model.element.Name;
 import org.testng.annotations.Test;
 
+import static POM_Allure.login.*;
+
 public class User extends BaseTest {
     String Name;
     String Surname;
