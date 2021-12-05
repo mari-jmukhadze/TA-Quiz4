@@ -29,13 +29,23 @@ public class login extends BaseTest {
     WebElement Number = driver.findElement(By.id("userNumber"));
     WebElement submit = driver.findElement(By.id("Submit"));
 
+    @BeforeTest
+    public void setup() {
+        BaseTest baseTest=new BaseTest();
+        baseTest.initialize();
+        driver=getDriver();
+        driver.get("https://www.demoqa.com/books");
 
 
-    @DataProvider (name = "users")
-    public User Base() {
+        WebElement Form = (WebElement) By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[2]");
+        Form.click();
 
-        return new User(FirstName.getText(), Surname.getText(), Gender.getText(), Number.getText());
+        WebElement PracticeForm = driver.findElement(By.xpath("//*[@id=\"item-0\"]"));
+        PracticeForm.click();
+
     }
+
+
 
     @Test(dataProvider = "users")
     public void fillingform(String a, String b, String g, String n) {
@@ -55,21 +65,14 @@ public class login extends BaseTest {
 
     }
 
+    @DataProvider (name = "users")
+    public User Base() {
 
+        return new User(FirstName.getText(), Surname.getText(), Gender.getText(), Number.getText());
 
-
-
-
-    @BeforeTest
-    public void setup() {
-        BaseTest baseTest=new BaseTest();
-        baseTest.initialize();
-        driver=getDriver();
-        driver.get("https://www.demoqa.com/books");
-
-
-//        WebElement Form = (WebElement) By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[2]");
-
+        //will it work though?
     }
+
+
 }
 
