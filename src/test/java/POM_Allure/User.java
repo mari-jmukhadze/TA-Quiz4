@@ -25,5 +25,7 @@ public class User extends BaseTest {
     public void register () {
         login.fillingform("Mariam", "Jmukhadze", "Female", "0532145789");
 
+        //es rogor unda gavasworo, staticze mere login classhsi vichedebi
+
     }
 }
