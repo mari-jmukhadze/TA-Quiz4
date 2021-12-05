@@ -41,10 +41,12 @@ public class login extends BaseTest {
         WebElement Form = (WebElement) By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[2]");
         Form.click();
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
         WebElement PracticeForm = driver.findElement(By.xpath("//*[@id=\"item-0\"]"));
         PracticeForm.click();
+
+        //sheidzleba fullpathit magram mashin pageis chatvirtvas ar daelodeba
 
     }
 
