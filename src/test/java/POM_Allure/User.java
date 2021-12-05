@@ -1,8 +1,11 @@
 package POM_Allure;
 
-import javax.lang.model.element.Name;
+import org.jsoup.Connection;
 
-public class User{
+import javax.lang.model.element.Name;
+import org.testng.annotations.Test;
+
+public class User extends BaseTest {
     String Name;
     String Surname;
     String Gender;
@@ -13,6 +16,12 @@ public class User{
         this.Surname = Surname;
         this.Gender = Gender;
         this.Number = Number;
+
+    }
+
+    @Test //(descripton = "add new student")
+    public void register () {
+        login.fillingform("Mariam", "Jmukhadze", "Female", "0532145789");
 
     }
 }
